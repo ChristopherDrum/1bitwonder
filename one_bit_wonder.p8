@@ -19,10 +19,11 @@ __lua__
 --if you've drawn your pixel art in a specific color, that "base color" will be stored in the image palettes so the extracted image will be identical to the one you dragged in
 local base_colors = {}
 
---palettes are semi-invariant; if you rotate draw colors, you need to update those values in the palette but the *positions* of pal() values for each layer are invariant. If you never change colors (as, say for B&W games) you can just keep a fixed set of palettes.
+--palettes are semi-invariant; if you rotate draw colors, you need to update those values in the palette but the *positions* of pal() values for each layer are invariant. If you never change colors (as, say for b&w games) you can just keep a fixed set of palettes.
 local palettes = {}
 
---transparency flags are invariant
+--transparency flags are invariant, but assume 0 as transparent.
+--modify as needed for your project, or even ignore
 local transparency = {0xaaaa, 0xcccc, 0xf0f0, 0xff00}
 
 --a var to let us cycle through extracted images in the post-compression preview
